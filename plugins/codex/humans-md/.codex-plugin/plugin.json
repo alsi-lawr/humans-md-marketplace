@@ -1,0 +1,29 @@
+{
+  "author": {
+    "name": "alsi-lawr",
+    "url": "https://github.com/alsi-lawr/HUMANS.md"
+  },
+  "description": "Portable behavioural contracts and governed Casefile workflows for coding agents.",
+  "interface": {
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "category": "Coding",
+    "defaultPrompt": [
+      "Investigate this repository with the Casefile workflow.",
+      "Implement accepted Casefile tickets with explicit ownership.",
+      "Create a skill and choose its verification strategy."
+    ],
+    "developerName": "alsi-lawr",
+    "displayName": "humans-md",
+    "longDescription": "Portable behavioural contracts and governed Casefile workflows for coding agents.",
+    "shortDescription": "Behaviour contracts and governed workflows",
+    "websiteURL": "https://github.com/alsi-lawr/HUMANS.md"
+  },
+  "license": "MIT",
+  "name": "humans-md",
+  "repository": "https://github.com/alsi-lawr/HUMANS.md",
+  "version": "0.1.0"
+}
