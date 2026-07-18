@@ -2,9 +2,9 @@
   "author": {
     "name": "alsi-lawr"
   },
-  "description": "Standing behaviour-contract lifecycle and recovery for coding agents.",
+  "description": "Reusable Git, README, and skill-generation guidance with generic verification assets.",
   "license": "MIT",
-  "name": "humans-md",
+  "name": "coding",
   "repository": "https://github.com/alsi-lawr/HUMANS.md",
   "version": "0.2.0"
 }

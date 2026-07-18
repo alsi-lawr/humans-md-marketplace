@@ -2,9 +2,9 @@
   "author": {
     "name": "alsi-lawr"
   },
-  "description": "Standing behaviour-contract lifecycle and recovery for coding agents.",
+  "description": "Governed Casefile workflows and optional Casefile agent integration.",
   "license": "MIT",
-  "name": "humans-md",
+  "name": "casefile",
   "repository": "https://github.com/alsi-lawr/HUMANS.md",
   "version": "0.2.0"
 }

@@ -1,0 +1,29 @@
+{
+  "author": {
+    "name": "alsi-lawr",
+    "url": "https://github.com/alsi-lawr/HUMANS.md"
+  },
+  "description": "Governed Casefile workflows and optional Casefile agent integration.",
+  "interface": {
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "category": "Coding",
+    "defaultPrompt": [
+      "Investigate this repository with the Casefile workflow.",
+      "Implement accepted Casefile tickets with explicit ownership.",
+      "Create a skill and choose its verification strategy."
+    ],
+    "developerName": "alsi-lawr",
+    "displayName": "casefile",
+    "longDescription": "Governed Casefile workflows and optional Casefile agent integration.",
+    "shortDescription": "Governed Casefile workflows and optional Casefile agent integration.",
+    "websiteURL": "https://github.com/alsi-lawr/HUMANS.md"
+  },
+  "license": "MIT",
+  "name": "casefile",
+  "repository": "https://github.com/alsi-lawr/HUMANS.md",
+  "version": "0.2.0"
+}

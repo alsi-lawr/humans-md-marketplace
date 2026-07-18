@@ -3,7 +3,7 @@
     "name": "alsi-lawr",
     "url": "https://github.com/alsi-lawr/HUMANS.md"
   },
-  "description": "Portable behavioural contracts and governed Casefile workflows for coding agents.",
+  "description": "Standing behaviour-contract lifecycle and recovery for coding agents.",
   "interface": {
     "capabilities": [
       "Interactive",
@@ -12,18 +12,17 @@
     ],
     "category": "Coding",
     "defaultPrompt": [
-      "Investigate this repository with the Casefile workflow.",
-      "Implement accepted Casefile tickets with explicit ownership.",
-      "Create a skill and choose its verification strategy."
+      "Preview or recover the standing repository behaviour contract.",
+      "Migrate a supported humans-md 0.1.5 installation before installing optional siblings."
     ],
     "developerName": "alsi-lawr",
     "displayName": "humans-md",
-    "longDescription": "Portable behavioural contracts and governed Casefile workflows for coding agents.",
-    "shortDescription": "Behaviour contracts and governed workflows",
+    "longDescription": "Standing behaviour-contract lifecycle and recovery for coding agents.",
+    "shortDescription": "Standing behaviour-contract lifecycle and recovery for coding agents.",
     "websiteURL": "https://github.com/alsi-lawr/HUMANS.md"
   },
   "license": "MIT",
   "name": "humans-md",
   "repository": "https://github.com/alsi-lawr/HUMANS.md",
-  "version": "0.1.5"
+  "version": "0.2.0"
 }

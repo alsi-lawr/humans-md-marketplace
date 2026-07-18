@@ -1,12 +1,8 @@
 ---
 name: codex-setup
-description: "Use immediately after installing humans-md to configure Codex V1, model overrides, Casefile roles, the global AGENTS.md contract, and durable uninstall recovery."
+description: "Use immediately after installing humans-md for Codex to preview and install only the global AGENTS.md contract with durable recovery."
 ---
 
-# Codex Setup
+# Codex setup
 
-Run `${CODEX_PLUGIN_ROOT}/scripts/setup-codex.py install --plugin-root ${CODEX_PLUGIN_ROOT}` without `--apply`. Show the concise JSON preview and ask once for approval.
-
-After approval, rerun with `--apply`. The script alone owns discovery, catalog generation, configuration, contract installation, legacy removal, backup, rollback, and mechanical verification. Report its result and the required host restart. Do not construct plans, merge configuration, choose probes, or perform model-based verification.
-
-If the script fails, say only: "Setup failed. Do you want me to debug it?" Do not investigate unless the human agrees.
+Run `${CODEX_PLUGIN_ROOT}/scripts/setup-codex.py install --plugin-root ${CODEX_PLUGIN_ROOT}` first. Show its preview and ask once before rerunning with `--apply`. It installs only the packaged `AGENTS.md` contract and records the prior state beneath `~/.codex/backups/humans-md/`. It does not configure models, V1 flags, profiles, roles, or Casefile. Restart Codex after a successful setup.
