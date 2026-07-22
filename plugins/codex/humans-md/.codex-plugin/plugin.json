@@ -12,8 +12,7 @@
     ],
     "category": "Coding",
     "defaultPrompt": [
-      "Preview or recover the standing repository behaviour contract.",
-      "Migrate a supported humans-md 0.1.5 installation before installing optional siblings."
+      "Preview or recover the standing repository behaviour contract."
     ],
     "developerName": "alsi-lawr",
     "displayName": "humans-md",
@@ -24,5 +23,5 @@
   "license": "MIT",
   "name": "humans-md",
   "repository": "https://github.com/alsi-lawr/HUMANS.md",
-  "version": "0.2.3"
+  "version": "0.3.0"
 }
