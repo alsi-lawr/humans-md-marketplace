@@ -3,7 +3,7 @@
     "name": "alsi-lawr",
     "url": "https://github.com/alsi-lawr/HUMANS.md"
   },
-  "description": "Reusable Git, README, and skill-generation guidance with generic verification assets.",
+  "description": "Reusable code-writing, Git, README, and skill-generation guidance with generic verification assets.",
   "interface": {
     "capabilities": [
       "Interactive",
@@ -12,18 +12,18 @@
     ],
     "category": "Coding",
     "defaultPrompt": [
-      "Investigate this repository with the Casefile workflow.",
-      "Implement accepted Casefile tickets with explicit ownership.",
+      "Implement a code change without speculative validation or recovery machinery.",
+      "Constrain tests to behavior owned by the supported API.",
       "Create a skill and choose its verification strategy."
     ],
     "developerName": "alsi-lawr",
     "displayName": "coding",
-    "longDescription": "Reusable Git, README, and skill-generation guidance with generic verification assets.",
-    "shortDescription": "Reusable Git, README, and skill-generation guidance with generic verification assets.",
+    "longDescription": "Reusable code-writing, Git, README, and skill-generation guidance with generic verification assets.",
+    "shortDescription": "Reusable code-writing, Git, README, and skill-generation guidance with generic verification assets.",
     "websiteURL": "https://github.com/alsi-lawr/HUMANS.md"
   },
   "license": "MIT",
   "name": "coding",
   "repository": "https://github.com/alsi-lawr/HUMANS.md",
-  "version": "0.2.1"
+  "version": "0.2.2"
 }
