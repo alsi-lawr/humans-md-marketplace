@@ -1,0 +1,43 @@
+{
+  "artifacts": [
+    {
+      "path": "bin/aarch64-apple-darwin/casefile",
+      "sha256": "6e05c83918bdd8a0a6c47deb99956c2407edf7f15aac7b19c80c6b2c78b35dac",
+      "size": 9206104,
+      "target": "aarch64-apple-darwin"
+    },
+    {
+      "path": "bin/aarch64-pc-windows-msvc/casefile.exe",
+      "sha256": "9dd2911297cf67b49511d6e3b7ace8c0c657b56752d507487d24da8c27f3d305",
+      "size": 9122304,
+      "target": "aarch64-pc-windows-msvc"
+    },
+    {
+      "path": "bin/aarch64-unknown-linux-musl/casefile",
+      "sha256": "ee6b3948f19a21640d1a6f39268e8a60b018a87ba852a425b7a652a3981f68c2",
+      "size": 9260144,
+      "target": "aarch64-unknown-linux-musl"
+    },
+    {
+      "path": "bin/x86_64-apple-darwin/casefile",
+      "sha256": "783d4c32cadb357f2aa812d33636495bd9d68ff5e404f9ea4ef00625bbacb08b",
+      "size": 9742044,
+      "target": "x86_64-apple-darwin"
+    },
+    {
+      "path": "bin/x86_64-pc-windows-msvc/casefile.exe",
+      "sha256": "257e9c6526024fe60ceee69fad1cb49b6978613fe6b42598fc8eb05e34cbdac4",
+      "size": 10757120,
+      "target": "x86_64-pc-windows-msvc"
+    },
+    {
+      "path": "bin/x86_64-unknown-linux-musl/casefile",
+      "sha256": "dbae962083a2190b65ced2dcafdcbb19b88b17c8b1d8f238e2dd1ebca10a7fca",
+      "size": 10898496,
+      "target": "x86_64-unknown-linux-musl"
+    }
+  ],
+  "schema_version": 1,
+  "source_commit": "bb8836e4d2d73f2efc25d17c291d8b2d8726f785",
+  "version": "0.4.0"
+}

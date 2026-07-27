@@ -8,7 +8,6 @@ import os
 import shutil
 import subprocess
 import sys
-import tempfile
 import tomllib
 from pathlib import Path, PurePosixPath
 
@@ -230,38 +229,45 @@ def binding_source(pair: dict) -> str:
     )
 
 
-def persist_selection(
-    casefile_executable: str,
-    planning_root: Path,
+def selection_request(
     investigation: str,
     pair: dict,
-    implementation_active: bool,
 ) -> dict:
     source = binding_source(pair)
-    with tempfile.TemporaryDirectory(prefix="casefile-writer-binding-") as temporary:
-        path = Path(temporary) / "bindings.toml"
-        path.write_text(source, encoding="ascii")
-        checked(
-            [
-                casefile_executable,
-                "--root",
-                str(planning_root),
-                "replace-strategy-binding",
-                "--investigation",
-                investigation,
-                "--source",
-                str(path),
-                "--implementation-active",
-                str(implementation_active).lower(),
-            ]
-        )
     return {
         "path": f"{investigation}/strategy/bindings.toml",
         "model": pair["model"],
         "reasoning_effort": pair["reasoning_effort"],
         "resolution": pair["resolution"],
-        "persisted": True,
+        "request": {
+            "investigation": investigation,
+            "binding_source": source,
+        },
+        "persisted": False,
+        "provider_preview_tool": "casefile_preview_writer_binding",
+        "provider_apply_tool": "casefile_apply_writer_binding",
+        "approval_required": True,
     }
+
+
+def require_writer_progress(
+    casefile_executable: str,
+    planning_root: Path,
+    investigation: str,
+    ticket_id: str,
+) -> None:
+    checked(
+        [
+            casefile_executable,
+            "--root",
+            str(planning_root),
+            "require-writer-progress",
+            "--investigation",
+            investigation,
+            "--ticket-id",
+            ticket_id,
+        ]
+    )
 
 
 def binding_projection(
@@ -300,10 +306,17 @@ def resolve_spawn(
     planning_root: Path,
     investigation: str,
     strategy_id: str,
+    ticket_id: str,
 ) -> dict:
     investigation = safe_investigation(investigation)
     if strategy_id not in STRATEGIES:
         raise BindingError(f"unsupported implementation strategy: {strategy_id}")
+    require_writer_progress(
+        casefile_executable,
+        planning_root,
+        investigation,
+        ticket_id,
+    )
     profiles = load_profiles(profiles_path)
     projection = binding_projection(
         casefile_executable,
@@ -386,12 +399,12 @@ def parser() -> argparse.ArgumentParser:
     select.add_argument("--investigation", required=True)
     select.add_argument("--model", required=True)
     select.add_argument("--reasoning-effort", required=True)
-    select.add_argument("--implementation-active", choices=("true", "false"), required=True)
     resolve = subparsers.add_parser("resolve")
     resolve.add_argument("--casefile-executable", default=shutil.which("casefile"))
     resolve.add_argument("--planning-root", type=Path, required=True)
     resolve.add_argument("--investigation", required=True)
     resolve.add_argument("--strategy-id", choices=STRATEGIES, required=True)
+    resolve.add_argument("--ticket-id", required=True)
     return value
 
 
@@ -405,26 +418,15 @@ def main() -> int:
         if arguments.operation == "offer":
             result = offer(arguments.codex_executable, home, profiles)
         elif arguments.operation == "select":
-            if not arguments.casefile_executable:
-                raise BindingError("Casefile executable was not found")
             investigation = safe_investigation(arguments.investigation)
-            active = arguments.implementation_active == "true"
-            if active:
-                raise BindingError(
-                    "writer binding replacement is prohibited while implementation or "
-                    "correction work is active"
-                )
             pair = selected_pair(
                 offer(arguments.codex_executable, home, profiles),
                 arguments.model,
                 arguments.reasoning_effort,
             )
-            result = persist_selection(
-                arguments.casefile_executable,
-                arguments.planning_root.expanduser().resolve(strict=True),
+            result = selection_request(
                 investigation,
                 pair,
-                active,
             )
         else:
             if not arguments.casefile_executable:
@@ -437,6 +439,7 @@ def main() -> int:
                 arguments.planning_root.expanduser().resolve(strict=True),
                 arguments.investigation,
                 arguments.strategy_id,
+                arguments.ticket_id,
             )
         print(json.dumps(result, indent=2, sort_keys=True))
         return 0

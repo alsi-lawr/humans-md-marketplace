@@ -3,7 +3,7 @@
     "name": "alsi-lawr",
     "url": "https://github.com/alsi-lawr/HUMANS.md"
   },
-  "description": "Governed Casefile workflows and optional Casefile agent integration.",
+  "description": "Governed Casefile workflows with fixed-root local Provider and MCP integration.",
   "interface": {
     "capabilities": [
       "Interactive",
@@ -18,12 +18,12 @@
     ],
     "developerName": "alsi-lawr",
     "displayName": "casefile",
-    "longDescription": "Governed Casefile workflows and optional Casefile agent integration.",
-    "shortDescription": "Governed Casefile workflows and optional Casefile agent integration.",
+    "longDescription": "Governed Casefile workflows with fixed-root local Provider and MCP integration.",
+    "shortDescription": "Governed Casefile workflows with fixed-root local Provider and MCP integration.",
     "websiteURL": "https://github.com/alsi-lawr/HUMANS.md"
   },
   "license": "MIT",
   "name": "casefile",
   "repository": "https://github.com/alsi-lawr/HUMANS.md",
-  "version": "0.3.4"
+  "version": "0.4.0"
 }

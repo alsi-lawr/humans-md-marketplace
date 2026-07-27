@@ -1,5 +1,0 @@
-# Disposition
-
-## Scope disposition
-
-Open.
