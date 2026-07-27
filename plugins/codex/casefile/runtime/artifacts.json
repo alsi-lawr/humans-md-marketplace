@@ -8,7 +8,7 @@
     },
     {
       "path": "bin/aarch64-pc-windows-msvc/casefile.exe",
-      "sha256": "f0af9f983efe01b87ea61aaefcd4f83fc4ed4b97b02e2e02c655477ea9161c36",
+      "sha256": "ff3af501265e89ae958463708d6a9d4b2defa7596ef98477d4a4adcd3f20d6a2",
       "size": 9122304,
       "target": "aarch64-pc-windows-msvc"
     },
@@ -26,7 +26,7 @@
     },
     {
       "path": "bin/x86_64-pc-windows-msvc/casefile.exe",
-      "sha256": "13531658c9fe3781e16012f042ed2515ce44e478c8599f895adaa668f4725142",
+      "sha256": "3d9aa08b7ac18afbfb7796ad8c1742f121a4a1bc0a664de16a911505e4a3caf8",
       "size": 10757120,
       "target": "x86_64-pc-windows-msvc"
     },
@@ -38,6 +38,6 @@
     }
   ],
   "schema_version": 1,
-  "source_commit": "5e6b841c2a7cdc65ba24df31186a55808f29ad19",
+  "source_commit": "77c4911748e67887ac28ff3740863019980dc405",
   "version": "0.4.0"
 }
