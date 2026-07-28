@@ -2,42 +2,42 @@
   "artifacts": [
     {
       "path": "bin/aarch64-apple-darwin/casefile",
-      "sha256": "c8adabc0c9e199d24d89f8614241b320d34b1b1e9fe76e3fbfde78c5cb19adf1",
-      "size": 9289640,
+      "sha256": "1fd87cbb0385fcc7856bd49b86aaa53f46f2cfbdbb64af6402447151cd6a2c68",
+      "size": 9188968,
       "target": "aarch64-apple-darwin"
     },
     {
       "path": "bin/aarch64-pc-windows-msvc/casefile.exe",
-      "sha256": "f3ad5c8179665484b7429a6ae7385906cac21981e23e33d68a2ac22152c46980",
-      "size": 9244160,
+      "sha256": "1ac7800c0419b2ec95e293c53987b2915c966a90599faf11150427acd788234b",
+      "size": 9081856,
       "target": "aarch64-pc-windows-msvc"
     },
     {
       "path": "bin/aarch64-unknown-linux-musl/casefile",
-      "sha256": "8b52d4c03c85062c419fe920feff3e09ad564dc8d879e78085a27c58cf87f4ed",
-      "size": 9325680,
+      "sha256": "8392b074cfdd6cccd707977c75bf8ceed0fdaabcd0eda93f02b0cc0207f88fc1",
+      "size": 9194608,
       "target": "aarch64-unknown-linux-musl"
     },
     {
       "path": "bin/x86_64-apple-darwin/casefile",
-      "sha256": "278c2615bb44ccf84f3a2efdf58b08d648468af2fd9f6b41531351bfb218a3a1",
-      "size": 9832652,
+      "sha256": "b2bdbd853a8890eda1e6ab40e91db10606382b23f9d46c0713a8d0e22a118c07",
+      "size": 9728500,
       "target": "x86_64-apple-darwin"
     },
     {
       "path": "bin/x86_64-pc-windows-msvc/casefile.exe",
-      "sha256": "58e4f41f97835aa60b29e8280ca3b748fef0e5bf2010972849df25d8de0b082a",
-      "size": 10880000,
+      "sha256": "a6dd16202cd529c2deb19f69a2b7d23d6c4c419f6cf0c9c646d67ad76600a645",
+      "size": 10681856,
       "target": "x86_64-pc-windows-msvc"
     },
     {
       "path": "bin/x86_64-unknown-linux-musl/casefile",
-      "sha256": "e7ab627d24ead13a337b9318b622b64a64b23dcaab56bec22f745d6d77bd819d",
-      "size": 10996800,
+      "sha256": "6453cee14ce610d8446f5e69f4ff2a18f61ff796d91c081ac3e6f693f7361a35",
+      "size": 10886208,
       "target": "x86_64-unknown-linux-musl"
     }
   ],
   "schema_version": 1,
-  "source_commit": "a8df230238195d7b4f1339f0d77cf3315a6f5abc",
+  "source_commit": "0817bae1da142f979fdc90f12aa356d4310ff4ae",
   "version": "0.4.0"
 }
