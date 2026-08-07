@@ -1,10 +1,13 @@
 {
   "author": {
-    "name": "alsi-lawr"
+    "name": "alsi-lawr",
+    "url": "https://github.com/alsi-lawr/HUMANS.md"
   },
   "description": "Reusable code-writing, Git, README, and skill-generation guidance with generic verification assets.",
+  "displayName": "coding",
+  "homepage": "https://github.com/alsi-lawr/HUMANS.md",
   "license": "MIT",
   "name": "coding",
   "repository": "https://github.com/alsi-lawr/HUMANS.md",
-  "version": "0.4.2"
+  "version": "0.4.3"
 }
