@@ -39,5 +39,6 @@ description:
 - Prefer focused status, name, and stat views.
 - Verify remote and forge mutations independently.
 - Report local-only work as local-only.
+
 - Load [the Codex GitHub CLI policy](references/codex-github-cli.md) before every GitHub CLI
   operation.
