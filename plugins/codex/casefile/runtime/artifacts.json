@@ -2,42 +2,42 @@
   "artifacts": [
     {
       "path": "bin/aarch64-apple-darwin/casefile",
-      "sha256": "8ff772b8cfd28edb6e44c61479121878e38a856540d3f9ee67642158c85001e7",
+      "sha256": "2644f92167e57b749f74e57ef5deec6c2359f75310bc897c78ee78ca81a9e6f8",
       "size": 9222536,
       "target": "aarch64-apple-darwin"
     },
     {
       "path": "bin/aarch64-pc-windows-msvc/casefile.exe",
-      "sha256": "81c45aff9885eac21550053dd239630a8b81bf5c2b065bc299481461d8efd94a",
+      "sha256": "c4d5e72bc7674027371d481053339fad6531f1a21fb1864b07f723966226200d",
       "size": 9119232,
       "target": "aarch64-pc-windows-msvc"
     },
     {
       "path": "bin/aarch64-unknown-linux-musl/casefile",
-      "sha256": "9cdb2a1cd72361b9b0329c620bc48131d31d0bb48c76c9af660c80bb3f1ace78",
+      "sha256": "08ef15a2f8b28fa22caaa3f285adf2a97a1d0ebe3151c4e171e4626fcc24100e",
       "size": 9260144,
       "target": "aarch64-unknown-linux-musl"
     },
     {
       "path": "bin/x86_64-apple-darwin/casefile",
-      "sha256": "4434a286fe741dc6f47b4aff465da829e2fa37171ef9dbaba4962b1f39af9219",
+      "sha256": "9d13b7788b2bc5ce139df54edebae4776f4382ddf2164aab3a3aa56f67494169",
       "size": 9766508,
       "target": "x86_64-apple-darwin"
     },
     {
       "path": "bin/x86_64-pc-windows-msvc/casefile.exe",
-      "sha256": "210f493b2d988d4b54652f60a27a329583720fc178ce5fe92cee666a74159178",
+      "sha256": "275824b5dfedf9cd5d394d0ab157ba01d9367315cc7cfa00912554150add0a5d",
       "size": 10733056,
       "target": "x86_64-pc-windows-msvc"
     },
     {
       "path": "bin/x86_64-unknown-linux-musl/casefile",
-      "sha256": "f34fe19f5f09a40353eec5776cee7a7e5306733716efd09c960aaf2b91fc669f",
+      "sha256": "07bcfbb6bd2305cd3500ac6e7353731b3c9e9b6f77cd973545c6c088bb195ec4",
       "size": 10923072,
       "target": "x86_64-unknown-linux-musl"
     }
   ],
   "schema_version": 1,
-  "source_commit": "ba956750114323af67ceeb9aaf02fd24eb0c8f65",
-  "version": "0.4.5"
+  "source_commit": "f3af5ac023b66ebdb2801ff038cbba10f332268c",
+  "version": "0.4.6"
 }
