@@ -6,7 +6,9 @@ import argparse
 import datetime
 import importlib.util
 import json
+import ntpath
 import os
+import re
 import shutil
 import subprocess
 import tempfile
@@ -141,6 +143,44 @@ def current_binding(executable: str, environment: dict[str, str]) -> str | None:
     return result.stdout + result.stderr
 
 
+def portable_path(value: object) -> tuple[str, str] | None:
+    if not isinstance(value, str) or not value or "\0" in value:
+        return None
+    if "\\" in value or re.match(r"^[A-Za-z]:", value):
+        return "windows", ntpath.normcase(ntpath.normpath(value))
+    return "posix", os.path.normpath(value)
+
+
+def binding_matches(binding: str | None, binary: Path | str, planning_root: Path | str) -> bool:
+    if binding is None:
+        return False
+    command = None
+    arguments = None
+    try:
+        document = json.loads(binding)
+    except json.JSONDecodeError:
+        document = None
+    if isinstance(document, dict):
+        command = document.get("command")
+        arguments = document.get("args")
+    else:
+        commands = re.findall(r"(?m)^\s*Command:\s*(.*?)\s*$", binding)
+        argument_rows = re.findall(r"(?m)^\s*Args:\s*(.*?)\s*$", binding)
+        if len(commands) == 1 and len(argument_rows) == 1:
+            command = commands[0]
+            prefix = "mcp-package --planning-root "
+            value = argument_rows[0]
+            if value.startswith(prefix):
+                arguments = ["mcp-package", "--planning-root", value[len(prefix):]]
+    return (
+        portable_path(command) == portable_path(str(binary))
+        and isinstance(arguments, list)
+        and len(arguments) == 3
+        and arguments[:2] == ["mcp-package", "--planning-root"]
+        and portable_path(arguments[2]) == portable_path(str(planning_root))
+    )
+
+
 def read_receipt(home: Path) -> tuple[Path, dict] | None:
     if not pointer(home).is_file():
         return None
@@ -185,7 +225,7 @@ def prepare(
         _, previous = active
         if previous.get("plugin_version") == manifest["version"] and not overwrite:
             raise SetupError("this Casefile version is already installed")
-        if binding is None or previous.get("binary") not in binding or previous.get("planning_root") not in binding:
+        if not binding_matches(binding, previous.get("binary", ""), previous.get("planning_root", "")):
             raise SetupError("the existing Casefile binding differs from its receipt")
     return {
         "root": root, "home": home, "executable": executable, "environment": environment,
@@ -208,22 +248,18 @@ def preview(plan: dict) -> dict:
 
 def register(plan: dict) -> None:
     binding = current_binding(plan["executable"], plan["environment"])
-    exact = (
-        binding is not None
-        and str(plan["binary"]) in binding
-        and str(plan["planning_root"]) in binding
-    )
-    if binding is not None and not exact:
+    matches = binding_matches(binding, plan["binary"], plan["planning_root"])
+    if binding is not None and not matches:
         # Claude refuses to add over an existing server name; replace the previous binding.
         checked([plan["executable"], "mcp", "remove", "--scope", "user", SERVER], plan["environment"])
-    if not exact:
+    if not matches:
         checked([
             plan["executable"], "mcp", "add", "--scope", "user", SERVER, "--",
             str(plan["binary"]), "mcp-package", "--planning-root", str(plan["planning_root"]),
         ], plan["environment"])
     binding = current_binding(plan["executable"], plan["environment"])
-    if binding is None or str(plan["binary"]) not in binding or str(plan["planning_root"]) not in binding:
-        raise SetupError("Claude did not retain the exact Casefile MCP binding")
+    if not binding_matches(binding, plan["binary"], plan["planning_root"]):
+        raise SetupError("Claude did not retain the expected Casefile MCP binding")
 
 
 def install(plan: dict) -> dict:
@@ -244,8 +280,7 @@ def install(plan: dict) -> dict:
     try:
         casefile_runtime.atomic_copy(plan["selected"]["source"], plan["binary"])
         copied = True
-        if casefile_runtime.sha256(plan["binary"]) != plan["selected"]["sha256"]:
-            raise SetupError("installed Casefile executable hash mismatch")
+        casefile_runtime.require_landed(plan["binary"])
         casefile_runtime.probe(plan["binary"], plan["version"], plan["planning_root"])
         registration_started = True
         register(plan)
@@ -259,7 +294,7 @@ def install(plan: dict) -> dict:
         receipt = {
             "schema_version": RECEIPT_SCHEMA, "status": "installed",
             "plugin_version": plan["version"], "binary": str(plan["binary"]),
-            "planning_root": str(plan["planning_root"]), "artifact_sha256": plan["selected"]["sha256"],
+            "planning_root": str(plan["planning_root"]),
             "owned_binaries": binaries,
             "subagent_spawn_depth": plan["spawn_depth"],
             "subagent_spawn_depth_before": depth_before,
@@ -282,10 +317,8 @@ def install(plan: dict) -> dict:
             if previous_value is None:
                 if binding is not None:
                     raise SetupError("fresh-install binding remains after configuration restore")
-            elif (
-                binding is None
-                or previous_value["binary"] not in binding
-                or previous_value["planning_root"] not in binding
+            elif not binding_matches(
+                binding, previous_value["binary"], previous_value["planning_root"]
             ):
                 raise SetupError("previous binding was not restored")
         except BaseException as rollback_failure:
@@ -293,11 +326,15 @@ def install(plan: dict) -> dict:
         if rollback_error is None and copied:
             plan["binary"].unlink(missing_ok=True)
         pointer_after = pointer(plan["home"])
-        pointer_matches = (
-            not pointer_after.exists()
-            if pointer_before is None
-            else pointer_after.is_file() and pointer_after.read_bytes() == pointer_before
-        )
+        if pointer_before is None:
+            pointer_matches = not pointer_after.exists()
+        else:
+            try:
+                expected_receipt = json.loads(pointer_before).get("receipt")
+                actual_receipt = json.loads(pointer_after.read_bytes()).get("receipt")
+                pointer_matches = pointer_after.is_file() and actual_receipt == expected_receipt
+            except (OSError, AttributeError, json.JSONDecodeError):
+                pointer_matches = False
         rollback_verified = rollback_error is None and pointer_matches
         atomic_write(receipt_dir / "failure.json", canonical({
             "status": "failed", "error": str(error),
@@ -321,7 +358,7 @@ def uninstall(home: Path, executable: str, apply: bool) -> dict:
     path, value = selected
     environment = {**os.environ, "CLAUDE_CONFIG_DIR": str(home)}
     binding = current_binding(executable, environment)
-    if binding is None or value["binary"] not in binding or value["planning_root"] not in binding:
+    if not binding_matches(binding, value["binary"], value["planning_root"]):
         raise SetupError("Claude Casefile binding changed after setup")
     owned_paths = []
     for relative in value.get("owned_binaries", []):
@@ -353,6 +390,7 @@ def uninstall(home: Path, executable: str, apply: bool) -> dict:
         except BaseException as error:
             for index, binary in enumerate(owned_paths):
                 casefile_runtime.atomic_copy(backup / str(index), binary)
+                casefile_runtime.require_landed(binary)
             rollback = {
                 "executable": executable, "environment": environment,
                 "binary": Path(value["binary"]), "planning_root": Path(value["planning_root"]),

@@ -2,42 +2,42 @@
   "artifacts": [
     {
       "path": "bin/aarch64-apple-darwin/casefile",
-      "sha256": "23912f4ee24a38503d3aef1add7b56b281d1ce4006f2ea8d199b94937fa1f3fe",
-      "size": 9222984,
+      "sha256": "a73df88162f8d24fc80710e34c0c80fd35a23039572b050da48a83b28ddc4879",
+      "size": 10131240,
       "target": "aarch64-apple-darwin"
     },
     {
       "path": "bin/aarch64-pc-windows-msvc/casefile.exe",
-      "sha256": "acb629e448bd9ad671ee7174ccad7a94f1196b4cac3f8b472d54163dce8619fe",
-      "size": 9117184,
+      "sha256": "a416a396dc8f5d42614c37b7040af63a869e5c4d11120dcaddbce483c8147589",
+      "size": 10204672,
       "target": "aarch64-pc-windows-msvc"
     },
     {
       "path": "bin/aarch64-unknown-linux-musl/casefile",
-      "sha256": "cff3040e4645488ed842a474de7d9a6319e437016e5792dea633875e57a946b6",
-      "size": 9260144,
+      "sha256": "2b288bcb44643b1bd5a8b187cce547d75002f760f8d2607f23f450f669429c3a",
+      "size": 10243192,
       "target": "aarch64-unknown-linux-musl"
     },
     {
       "path": "bin/x86_64-apple-darwin/casefile",
-      "sha256": "5f7c96a22d4fbd19d04bdaf1aeb58b45b9bc25b6fae4314d011fb964c9e7bc39",
-      "size": 9766932,
+      "sha256": "aa732f3ecc8b8c6cae2adb35b562c4551fe233f4ace739c9fd6e1eaea0f04448",
+      "size": 10828192,
       "target": "x86_64-apple-darwin"
     },
     {
       "path": "bin/x86_64-pc-windows-msvc/casefile.exe",
-      "sha256": "fbd9e3c03b4a633755ed17eb0dbaea19ffd13c1bc62f08af56ef796d71ddf19f",
-      "size": 10729984,
+      "sha256": "f314076bfa848764c4ed327284cc153b86b44a3aae05f60dd7440cb6b5b334d8",
+      "size": 12081152,
       "target": "x86_64-pc-windows-msvc"
     },
     {
       "path": "bin/x86_64-unknown-linux-musl/casefile",
-      "sha256": "05fdcab05d3b6daf7f8d8e9558f669146bcfe676216802a96f77047a139996e6",
-      "size": 10923072,
+      "sha256": "80c600b76257673be257a8fffbfe3f57ff93ef2a3651e1bcdcec4d9e024d7413",
+      "size": 12139616,
       "target": "x86_64-unknown-linux-musl"
     }
   ],
   "schema_version": 1,
-  "source_commit": "61a31fe883857be842ce9353d26a5e332a4fa643",
-  "version": "0.4.10"
+  "source_commit": "7385c8c1f322e95bcf95c66c753e97d0285cb619",
+  "version": "0.4.11"
 }
