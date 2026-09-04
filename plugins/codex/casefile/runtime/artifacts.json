@@ -2,42 +2,42 @@
   "artifacts": [
     {
       "path": "bin/aarch64-apple-darwin/casefile",
-      "sha256": "cdfaa735d386c86ab1b25ebaed61e7bf697f19dca44bc3df535f25fa618c5712",
-      "size": 10133320,
+      "sha256": "56f73e8db367555bc8b89d404bd21a7b518dee6391869f3f5ae661f3d193aedf",
+      "size": 10133304,
       "target": "aarch64-apple-darwin"
     },
     {
       "path": "bin/aarch64-pc-windows-msvc/casefile.exe",
-      "sha256": "39ce628f4ea7f582aaf3b8bc02c2c9e43d042851f28bcc45e3e578cbc636f17d",
+      "sha256": "79cfdb61c5a07dbe72739af89a1be67123475c8aa63ddca4d896209a8f9132c8",
       "size": 10207232,
       "target": "aarch64-pc-windows-msvc"
     },
     {
       "path": "bin/aarch64-unknown-linux-musl/casefile",
-      "sha256": "4ed8d70611c557ad2ede37a1a201ef46a45e8aae68f3829c0d6719659d358bdb",
+      "sha256": "38dd021f301129c709acf88ed1f52fb48190ac92edb69daaf71622bbe3e608da",
       "size": 10243200,
       "target": "aarch64-unknown-linux-musl"
     },
     {
       "path": "bin/x86_64-apple-darwin/casefile",
-      "sha256": "aeeee06c5c8d147bbc30b875fe4384fac6c1dd49b50cc4d640900286b4fd2b7a",
+      "sha256": "baf08b7b6dc3e705ce647c8ff39200aa1481041cacf2a13aec8c9f699a2b6199",
       "size": 10817160,
       "target": "x86_64-apple-darwin"
     },
     {
       "path": "bin/x86_64-pc-windows-msvc/casefile.exe",
-      "sha256": "2c6168c409ba87e8c5f89000bade7cc0d53f643bc580f6fb4d0d0e6e03b68306",
+      "sha256": "38f7a220f05d3a5d7b49da1d2d91e9cdcca53099d0a2c608c92e00c5547e0922",
       "size": 12064768,
       "target": "x86_64-pc-windows-msvc"
     },
     {
       "path": "bin/x86_64-unknown-linux-musl/casefile",
-      "sha256": "0dbd8c4c2aa48d457cfc2c43234473b25a80a78c9498bcd5573f62a2c9e22c77",
+      "sha256": "c88d1726e8bcf24f45d7d227777177296e2542575bfeeb36a3c0aec6ea477d9a",
       "size": 12131432,
       "target": "x86_64-unknown-linux-musl"
     }
   ],
   "schema_version": 1,
-  "source_commit": "7f2ab5666c053c77c4bbcb6532160e37281c3531",
-  "version": "0.5.0"
+  "source_commit": "518c8b2eebd0fe8ffc616e2dbf766a6bc62d475b",
+  "version": "0.5.1"
 }
