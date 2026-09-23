@@ -2,42 +2,42 @@
   "artifacts": [
     {
       "path": "bin/aarch64-apple-darwin/casefile",
-      "sha256": "b4f9c7b1948dd88bd2ec091e064c545d6f109bbf55c768e977fd697e324a3dd3",
+      "sha256": "877e3bb1c15456a54012a7a9e0e08d5601c24cb57335130f5cbbedc3f45ed485",
       "size": 10756168,
       "target": "aarch64-apple-darwin"
     },
     {
       "path": "bin/aarch64-pc-windows-msvc/casefile.exe",
-      "sha256": "08f44a0df206965bf999940eb7479dba43afe622f583429697645ab46fcc8a56",
+      "sha256": "e758c43f503fb505591e354dbc2dcb41c0b1d543fee922126dcc441da0b8c501",
       "size": 10804736,
       "target": "aarch64-pc-windows-msvc"
     },
     {
       "path": "bin/aarch64-unknown-linux-musl/casefile",
-      "sha256": "200ade6e99bac37a1ecaf5e1c7c2a955f1bda92149b366627f466ec9349d748b",
+      "sha256": "0ad7b2255a77ed4dd3a50657a62e3db004f0d6b51c06530098b80007b0beaa7e",
       "size": 10833104,
       "target": "aarch64-unknown-linux-musl"
     },
     {
       "path": "bin/x86_64-apple-darwin/casefile",
-      "sha256": "1a0e7fa66f25050c4658d3c062c81de16cdbc919fc2f6c0bf3644b7a319bff54",
+      "sha256": "e5b960d5117778ed2a727355856698bb8e768b5906e3155e844cdeb38b278e21",
       "size": 11529736,
       "target": "x86_64-apple-darwin"
     },
     {
       "path": "bin/x86_64-pc-windows-msvc/casefile.exe",
-      "sha256": "0e8d53b4da6635903b55dc69f18a0c9e2b8b2f9e249c5903086e7ae89aa15c6b",
+      "sha256": "42de565037a6bc2aed4d5e01a8b7110be9f1240716a39d34f450eaac0de71c5f",
       "size": 12810240,
       "target": "x86_64-pc-windows-msvc"
     },
     {
       "path": "bin/x86_64-unknown-linux-musl/casefile",
-      "sha256": "7a85b3dcfb16be75564e111f348e8caedf6948e44553f91832e68b11241f4821",
+      "sha256": "04edcb74f75c1f09487afd93403ae47fcc932c7f2339a237b8c3bb3be1f68934",
       "size": 12864680,
       "target": "x86_64-unknown-linux-musl"
     }
   ],
   "schema_version": 1,
-  "source_commit": "5b633807b9c75cd94a085dd8c2a1a41f2c4fe9cb",
-  "version": "0.6.3"
+  "source_commit": "7e910231b077fd529a2e8adcad2d329803562ffc",
+  "version": "0.7.0"
 }
