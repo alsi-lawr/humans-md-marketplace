@@ -2,42 +2,42 @@
   "artifacts": [
     {
       "path": "bin/aarch64-apple-darwin/casefile",
-      "sha256": "c335cddd09946acb3e7590f216fb42068abccdeae979bebb2d6d03db8736b37b",
-      "size": 12145848,
+      "sha256": "6cf9e645b780bf65c3292f6863ecd1cfe7f835261eb800b7bf615d72cea9dda1",
+      "size": 12216152,
       "target": "aarch64-apple-darwin"
     },
     {
       "path": "bin/aarch64-pc-windows-msvc/casefile.exe",
-      "sha256": "4efefd1354ad08ff4fa38d2e5d2fd5097b997d8a23d580a647e5d5fb833ea3cd",
-      "size": 12155904,
+      "sha256": "c0cceedb42bb7c2fdba40dac1cdb089f1b96620bfab36b1cfddccda7e4f02212",
+      "size": 12161024,
       "target": "aarch64-pc-windows-msvc"
     },
     {
       "path": "bin/aarch64-unknown-linux-musl/casefile",
-      "sha256": "d34a2f515d0118e8b8450e24e59344326055f501fee54bf716050afb81bd97ec",
-      "size": 12078536,
+      "sha256": "21c9add6953b73a63b435f5cbb4fb76a771eea2852a1e5702e3ee43d8ff0e8c8",
+      "size": 12144072,
       "target": "aarch64-unknown-linux-musl"
     },
     {
       "path": "bin/x86_64-apple-darwin/casefile",
-      "sha256": "efd84615e6a7284456b81ec19dcfb5240c04b3591a8874e8f36bc142fef0b878",
-      "size": 13146936,
+      "sha256": "31143c21e9bd6e00ebdb8310a55ecce793ae79645b7d5c0bc0325feb1ec74baf",
+      "size": 13203456,
       "target": "x86_64-apple-darwin"
     },
     {
       "path": "bin/x86_64-pc-windows-msvc/casefile.exe",
-      "sha256": "9fb10c0123f59ba79b657921bc994c9e5fccb57b99a7712eae3283610748ac05",
-      "size": 14422016,
+      "sha256": "b097bc61b41cdbfb90991f2dea750b62f7a970fd0df1ea14a949adccbf1a8e3e",
+      "size": 14413312,
       "target": "x86_64-pc-windows-msvc"
     },
     {
       "path": "bin/x86_64-unknown-linux-musl/casefile",
-      "sha256": "bf38e03a8fbd3e21307e4c393bcf1604928b04a832da01d80a492dc1f44cfa25",
-      "size": 14441896,
+      "sha256": "5a9952addc248decb6420c7cf07fb3de77057447372d42b546e21cfa6c5d4526",
+      "size": 14523816,
       "target": "x86_64-unknown-linux-musl"
     }
   ],
   "schema_version": 1,
-  "source_commit": "e6e9885c66c355d719444a03610b400d5240c822",
-  "version": "0.9.0"
+  "source_commit": "cac4134d01f8b956fafcf3e35dc33c9102816368",
+  "version": "0.10.0"
 }
